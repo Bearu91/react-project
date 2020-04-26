@@ -5,16 +5,22 @@ import PropTypes from 'prop-types';
 
 class Column extends React.Component {
 static propTypes ={
-    Animals: PropTypes.array,
-    Plants: PropTypes.array,
-    Minerals: PropTypes.array,
+    title: PropTypes.string,
+    cards: PropTypes.array,
+   
 
 }
 
   render() {
+    const {title,cards} = this.props
     return (
       <section className={styles.component}>
-        <h3 className={styles.title}>{this.props.Animals}{this.props.Plants}{this.props.Minerals}</h3>
+        <h3 className={styles.title}>{title}</h3>
+          <ul>
+            {cards.map(function(ele) {
+              return <li key={ele.key}>{ele.title}</li>
+            })}
+          </ul>
       </section>
     )
   }
