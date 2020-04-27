@@ -35,8 +35,8 @@ class Column extends React.Component {
       <section className={styles.component}>
         <h3 className={styles.title}>{title}<span className={styles.icon}><Icon name={icons}/></span></h3>
         <Card list={this.state.cards}/>
-        <div className={styles.creator}>
-            <Creator text={'dodaj pozycje'} action= {title => this.addColumn(title)}/>
+        <div>
+            <Creator text={'dodaj pozycje'} action={title => this.addCard(title)}/>
         </div>
       </section>
     )
