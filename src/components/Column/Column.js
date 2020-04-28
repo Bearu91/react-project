@@ -5,9 +5,6 @@ import Card from '../Card/Card';
 import Creator from '../Creator/Creator';
 import Icon from '../Icon/Icon';
 
-
-
-
 class Column extends React.Component {
   static propTypes ={
     title: PropTypes.string,
@@ -21,25 +18,25 @@ class Column extends React.Component {
     const newCards = [...this.state.cards];
     newCards.push({
       key: newCards.length + 1,
-      title
-    })
+      title,
+    });
     this.setState({
-      cards: newCards
+      cards: newCards,
     });
   }
 
 
   render() {
-    const {title,cards,icons} = this.props
+    const {title,icons} = this.props;
     return (
       <section className={styles.component}>
         <h3 className={styles.title}>{title}<span className={styles.icon}><Icon name={icons}/></span></h3>
         <Card list={this.state.cards}/>
         <div>
-            <Creator text={'dodaj pozycje'} action={title => this.addCard(title)}/>
+          <Creator text={'dodaj pozycje'} action={title => this.addCard(title)}/>
         </div>
       </section>
-    )
+    );
   }
 }
 
