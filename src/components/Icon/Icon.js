@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 
 const Icon = props => (
-  <i className={`fas fa-${props.name}`}></i>);
+  <i className={`fas fa-${props.icon}`}></i>);
 
 Icon.propTypes = {
-  name: PropTypes.object,
+  icon: PropTypes.node,
 };
 
 export default Icon;
