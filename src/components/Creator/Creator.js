@@ -8,6 +8,7 @@ import { settings } from '../../data/dataStore';
 class Creator extends React.Component {
   static propTypes = {
     text: PropTypes.string,
+    action: PropTypes.func,
   }
 
   static defaultProps = {
@@ -29,7 +30,7 @@ class Creator extends React.Component {
 
   handleOK = () => {
     if(this.state.value != ''){
-      window.this.props.action(this.state.value);
+      this.props.action(this.state.value);
       this.setState({
         value: '',
         visibleButtons: false,
