@@ -3,14 +3,16 @@ import styles from './Container.scss';
 import PropTypes from 'prop-types';
 
 
-const container = props => {
-  <div className={styles.component}>
-    {props.children}
-  </div>;
+const Container = (props) => {
+  return(
+    <div className={styles.component}>
+      {props.children}
+    </div>
+  );
 };
 
-container.propTypes ={
+Container.propTypes ={
   children: PropTypes.node,
 };
 
-export default container;
+export default Container;

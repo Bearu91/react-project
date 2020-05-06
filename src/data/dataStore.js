@@ -12,6 +12,23 @@ export const settings = {
   },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
+  logoIcon: 'cat',
+};
+
+export const infoContents = {
+  title: 'Info',
+  subtitle: 'React is a JavaScript library',
+  backgroundTitle: 'This is a rocket!',
+};
+
+export const faqContents = {
+  title: 'Frequently Asked Questions',
+  subtitle: {
+    questionOne: 'What is React',
+    questionTwo: 'What is Redux',
+    questionThree: 'What is Router',
+  },
+  backgroundTitle: 'React is great!',
 };
 
 export const pageContents = {
@@ -79,6 +96,18 @@ const lists = [
     description: 'Interesting things I want to check out!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
+  {
+    id: 'list-2',
+    title: 'This is a rocket',
+    description: 'List for gamers',
+    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  },
+  {
+    id: 'list-3',
+    title: 'React is great',
+    description: 'List for bookworms',
+    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  },
 ];
 
 const columns = [
@@ -99,12 +128,6 @@ const columns = [
     listId: 'list-1',
     title: 'Games',
     icon: 'gamepad',
-  },
-  {
-    id: 'column-4',
-    listId: 'list-2',
-    title: 'Strange column',
-    icon: 'question',
   },
 ];
 
