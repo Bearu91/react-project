@@ -5,6 +5,10 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import MainLayout from '../MainLayout/MainLayout';
 import {AnimatedSwitch} from 'react-router-transition';
 import Faq from '../FAQ/FAQ';
+import styles from './App.scss';
+import List from '../List/ListContainer';
+import SearchResults from '../SearchResults/SearchResults';
+
 
 
 const App = () => (
@@ -14,11 +18,13 @@ const App = () => (
         atEnter={{ opacity: 0 }}
         atLeave={{ opacity: 0 }}
         atActive={{ opacity: 1 }}
-        className="switch-wrapper"
+        className={styles.switchWrapper}
       >
         <Route exact path="/" component={Home} />
         <Route exact path="/info" component={Info} />
         <Route exact path='/faq' component={Faq} />
+        <Route exact path="/list/:id" component={List} />
+        <Route exact path="/search/:title" component={SearchResults} />
       </AnimatedSwitch>
     </MainLayout>
   </BrowserRouter>
