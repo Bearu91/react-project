@@ -1,31 +1,43 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {NavLink, Link} from 'react-router-dom';
 import styles from './Header.scss';
-import Container from '../Container/Container';
-import Icon from '../Icon/Icon';
-import { settings } from '../../data/dataStore';
-import Search from '../Search/Search';
+import Container from '../Container/Container.js';
+import Icon from '../Icon/Icon.js';
+import PropTypes from 'prop-types';
+import {settings} from '../../data/dataStore';
+import Search from '../Search/SearchContainer.js';
 
+class Header extends React.Component {
 
-class Header extends Component {
-  render (){
-    const logoIcon = settings.logoIcon;
-    return(
+  static propTypes = {
+    icon: PropTypes.node.isRequired,
+  }
+
+  static defaultProps = {
+    icon: settings.navbar.icon,
+  }
+
+  render () {
+    const {icon} = this.props;
+    return (
       <header className={styles.component}>
         <Container>
           <div className={styles.wrapper}>
             <Link className={styles.logo} to='/'>
-              <Icon icon={logoIcon}/>     
+              <Icon name={icon} />
             </Link>
-            <Search/>
+            <Search />
             <nav>
-              <NavLink exact to='/'>Home</NavLink>
-              <NavLink exact to='/info'>Info</NavLink>
+              <NavLink exact to='/' activeClassName='active'>{settings.navbar.links.home}</NavLink>
+              <NavLink exact to='/info' activeClassName='active'>{settings.navbar.links.info}</NavLink>
+              <NavLink exact to='/FAQ' activeClassName='active'>{settings.navbar.links.faq}</NavLink>
             </nav>
+            
           </div>
         </Container>
       </header>
     );
   }
 }
+
 export default Header;

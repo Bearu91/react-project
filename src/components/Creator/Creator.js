@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './Creator.scss';
 import Button from '../Button/Button';
 import PropTypes from 'prop-types';
-import { settings } from '../../data/dataStore';
-
 
 class Creator extends React.Component {
   static propTypes = {
@@ -12,7 +10,7 @@ class Creator extends React.Component {
   }
 
   static defaultProps = {
-    text: settings.creator.defaultText,
+    text: 'Add new item',
   }
 
   state = {
@@ -55,8 +53,8 @@ class Creator extends React.Component {
           onChange={this.handleChange}
         />
         <div className={styles.buttons + (this.state.visibleButtons ? ' ' + styles.buttonsShown : '')}>
-          <Button onClick={this.handleOK}>{settings.creator.buttonOK}</Button>
-          <Button onClick={this.handleCancel} variant='danger'>{settings.creator.buttonCancel}</Button>
+          <Button onClick={this.handleOK}>OK</Button>
+          <Button onClick={this.handleCancel} variant='danger'>cancel</Button>
         </div>
       </div>
     );

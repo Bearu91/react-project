@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../Header/Header';
+import Header from '../Header/Header.js';
 
-
-const MainLayout = ({children}) => (
+const MainLayout = ({ children }) => (
   <div>
-    <Header/>
+    <Header />
     {children}
   </div>
 );

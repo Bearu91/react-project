@@ -12,28 +12,36 @@ export const settings = {
   },
   defaultListDescription: '<p>I can do all the things!!!</p>',
   defaultColumnIcon: 'list-alt',
-  logoIcon: 'cat',
-};
 
-export const infoContents = {
-  title: 'Info',
-  subtitle: 'React is a JavaScript library',
-  backgroundTitle: 'This is a rocket!',
-};
-
-export const faqContents = {
-  title: 'Frequently Asked Questions',
-  subtitle: {
-    questionOne: 'What is React',
-    questionTwo: 'What is Redux',
-    questionThree: 'What is Router',
+  navbar: {
+    icon: 'cat',
+    links: {
+      home: 'Home',
+      info: 'Info',
+      faq: 'FAQ',
+    },
   },
-  backgroundTitle: 'React is great!',
 };
 
 export const pageContents = {
   title: 'My first React app',
   subtitle: 'A simple to-do app, with lists, columns and cards',
+};
+
+export const faqContents = {
+  title: 'Things to do <sup>soon!</sup>',
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  subtitle: 'FAQ',
+  description:
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+};
+
+export const infoContents = {
+  title: 'Things to do <sup>soon!</sup>',
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  subtitle: 'INFO',
+  description:
+		'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 };
 
 export const listData = {
@@ -96,17 +104,21 @@ const lists = [
     description: 'Interesting things I want to check out!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
+
   {
     id: 'list-2',
-    title: 'This is a rocket',
-    description: 'List for gamers',
-    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+    title: 'Places to visit',
+    description: 'Interesting locations I want to check out!',
+    image:
+			'https://images.pexels.com/photos/3361704/pexels-photo-3361704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
   },
+
   {
     id: 'list-3',
-    title: 'React is great',
-    description: 'List for bookworms',
-    image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+    title: 'Things to do <sup>soon!</sup>',
+    description: 'Interesting events I want to participate!',
+    image:
+			'https://images.pexels.com/photos/2970091/pexels-photo-2970091.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
   },
 ];
 
@@ -128,6 +140,12 @@ const columns = [
     listId: 'list-1',
     title: 'Games',
     icon: 'gamepad',
+  },
+  {
+    id: 'column-4',
+    listId: 'list-2',
+    title: 'Strange column',
+    icon: 'question',
   },
 ];
 
@@ -165,7 +183,7 @@ const cards = [
 ];
 
 const initialStoreData = {
-  app: {...pageContents},
+  app: { ...pageContents },
   lists: [...lists],
   columns: [...columns],
   cards: [...cards],
